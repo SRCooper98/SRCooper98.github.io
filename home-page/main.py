@@ -5,11 +5,12 @@ from js import document, console, window, Object
 from pyodide.ffi import create_proxy, to_js
 import warnings
 
-warnings.simplefilter(action='ignore', category=pd.errors.PerformanceWarning) # Ignores the performance warnings for the data table
+warnings.simplefilter(action = 'ignore', category = pd.errors.PerformanceWarning) # Ignores the performance warnings for the data table
 
 def makeDataTable(file):
     squad_rawdata_list = pd.read_html(file, header=0, encoding="utf-8", keep_default_na=False)
     squad_rawdata = squad_rawdata_list[0]
+    print("Made Data Table")
     return squad_rawdata
 
 def calcStats(squad_rawdata):
@@ -17,6 +18,7 @@ def calcStats(squad_rawdata):
     squad_rawdata['Spd'] = ( squad_rawdata['Pac'] + squad_rawdata['Acc'] ) / 2
     squad_rawdata['Work'] = ( squad_rawdata['Wor'] + squad_rawdata['Sta'] ) / 2
     squad_rawdata['SetP'] = ( squad_rawdata['Jum'] + squad_rawdata['Bra'] ) / 2 #Not sure I agree with this for calculating set piece ability
+    print("After basics")
     
     # calculates gk score
     squad_rawdata['gk_essential'] = ( 
@@ -715,7 +717,7 @@ def calcStats(squad_rawdata):
         squad_rawdata['Sta'] + 
         squad_rawdata['Tec'] + 
         squad_rawdata['Wor']) / 11
-    squad_rawdata['str'] =(( squad_rawdata['str_core'] * 0.5) + (squad_rawdata['str_secondary'] * 0.5))
+    squad_rawdata['str'] = (( squad_rawdata['str_core'] * 0.5) + (squad_rawdata['str_secondary'] * 0.5))
     squad_rawdata.str = squad_rawdata.str.round(1)
     print("After Str")
     
@@ -945,6 +947,7 @@ def calcStats(squad_rawdata):
 # creates a function to make a sortable html export
 def generateHtml(dataframe: pd.DataFrame):
     # get the table HTML from the dataframe
+    print("Generating HTML")
     table_html = dataframe.to_html(table_id="table", index=False)
     # construct the complete HTML with jQuery Data tables
     # You can disable paging or enable y scrolling on lines 20 and 21 respectively

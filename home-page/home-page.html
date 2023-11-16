@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+  <script defer type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+  <title>Football Manager Scouting</title>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="home-page.html">Home</a></li>
+      <li><a href="../about-page/about-page.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <header>
+      <h1>FM Scouting Tool</h1>
+    </header>
+
+    <!-- TODO: Add ability to select the positions and roles desired -->
+    <!-- Add a zip file of views to assets to target for download -->
+    <main>
+      <h3>How to use</h3>
+      <p> 
+        To use the tool, export a html file from FM using the <a href="../assets/" download="views">views</a> linked which are views which will show all the 
+        attributes for the players. This includes views for your squad, player search and shortlist</br>
+        Once you have exported a html file you can upload it here. It will ask you to save the output, save this as a html file. </br> 
+        It will give you a file that is in a table format of all the players and allow you to sort each column easily 
+      </p>
+
+      <label class="customUpload">
+        <input type="file" id="fileInput"/>
+        Upload FM File
+      </label>
+    </main>
+  </div>
+
+  <footer>
+  </footer>
+
+
+<script type="py" src="./main.py" config="./pyscript.json"></script>
+</body>
+</html>

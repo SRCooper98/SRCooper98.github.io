@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../globalStyles.css">
   <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
   <script defer type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
   <title>Football Manager Scouting</title>
@@ -21,6 +22,11 @@
     <header>
       <h1>FM Scouting Tool</h1>
     </header>
+
+    <!-- Hidden div unless saveFilePicker isn't supported -->
+    <div class="alert"> 
+      <h2>Please don't use Firefox or Safari. You will not be able to save the output otherwise</h2>
+    </div>
 
     <!-- TODO: Add ability to select the positions and roles desired -->
     <!-- Add a zip file of views to assets to target for download -->
@@ -43,7 +49,7 @@
   <footer>
   </footer>
 
-
+<script src="home-page.component.js"></script>
 <script type="py" src="./main.py" config="./pyscript.json"></script>
 </body>
 </html>

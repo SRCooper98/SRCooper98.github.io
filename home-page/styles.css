@@ -1,38 +1,16 @@
-body {
-    margin: 0;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
-}
-
-.content {
-    margin: 8px 100px;
-}
-
 header {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    background-color: rgba(240, 40, 3, 0.7);
+    border: 2px solid;
+    border-color: red;
+    height: 50px;
+    display: none;
+    /* display: flex; change to flex if needed via JS*/ 
     justify-content: center;
     align-items: center;
 }

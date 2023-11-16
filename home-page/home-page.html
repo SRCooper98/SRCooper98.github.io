@@ -24,12 +24,11 @@
     </header>
 
     <!-- Hidden div unless saveFilePicker isn't supported -->
-    <div class="alert"> 
+    <div class="alert" id="browserAlert"> 
       <h2>Please don't use Firefox or Safari. You will not be able to save the output otherwise</h2>
     </div>
 
     <!-- TODO: Add ability to select the positions and roles desired -->
-    <!-- Add a zip file of views to assets to target for download -->
     <main>
       <h3>How to use</h3>
       <p> 
@@ -44,13 +43,17 @@
       </p>
 
       <a href="../assets/views.zip" download="views">
-        <button class="download"> Download Views </button>
+        <button class="customUpload"> Download Views </button>
       </a>
 
       <label class="customUpload">
-        <input type="file" id="fileInput"/>
+        <input type="file" id="fileInput" accept="html"/>
         Upload FM File
       </label>
+
+      <div class="alert" id="sizeAlert">
+        <p>File size too big please reduce the amount of players</p>
+      </div>
     </main>
   </div>
 

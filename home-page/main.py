@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import asyncio
-from js import document, console, window, Object
+from js import document, console, window, Object, fileSizeCheck
 from pyodide.ffi import create_proxy, to_js
 import warnings
 
@@ -976,6 +976,13 @@ def generateHtml(dataframe: pd.DataFrame):
     return html
 
 async def process_file(event):
+    
+    # Checks file size using function in js file. If file is too big it stops the execution
+    sizeCheck = fileSizeCheck(event.target.files)
+    if sizeCheck == False:
+        return
+    
+    #Makes the uploaded file a python object
     fileList = event.target.files.to_py()
 
     for f in fileList:

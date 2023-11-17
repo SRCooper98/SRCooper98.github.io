@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+    margin: 50px;
+    height: 1024px;
 }
 
 ul {
@@ -27,6 +28,8 @@ li a:hover {
     background-color: #111;
 }
 
-.content {
-    margin: 8px 100px;
+@media screen and (max-height < 1020px) {
+    body {
+        height: 100%;
+    }
 }

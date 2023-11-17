@@ -122,6 +122,8 @@ def calcStats(squad_rawdata):
     squad_rawdata['wb'] = (((squad_rawdata['wb_essential'] * 5) + (squad_rawdata['wb_core'] * 3) + (squad_rawdata['wb_secondary'] * 1)) / 52)
     squad_rawdata.wb = squad_rawdata.wb.round(1)
     
+    # Add CWB
+    
     print("After Wing Back")
     # Calculates Inverted Wing Back Score
     squad_rawdata['iwb_essential'] = ( 
@@ -400,6 +402,8 @@ def calcStats(squad_rawdata):
     squad_rawdata['box2'] = ((( squad_rawdata['box2_essential'] * 5) + ( squad_rawdata['box2_core'] * 3) + (squad_rawdata['box2_secondary'] * 1)) / 48)
     squad_rawdata.box2 = squad_rawdata.box2.round(1)
     print("After B2B")
+    
+    #Add Carrilero
     
     # Add Mezzala
     squad_rawdata['mez_essential'] = (
@@ -988,13 +992,17 @@ async def process_file(event):
     for f in fileList:
         data = await f.text()
         squadRawData = makeDataTable(data)
+        # Maybe add a check to see if all necessary attrs exist
         squadData = calcStats(squadRawData)
         weightedData = generateHtml(squadData)
         try:
             # Perform the actual file system save 
             options = {
                 "startIn": "downloads",
-                "suggestedName": "output.html"
+                "suggestedName": "output.html",
+                "types": {
+                 "accept": { "text/html": [".html"] }   
+                }
             }
             fileHandle = await window.showSaveFilePicker(Object.fromEntries(to_js(options)))
             file = await fileHandle.createWritable()

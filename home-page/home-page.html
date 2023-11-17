@@ -11,16 +11,9 @@
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="home-page.html">Home</a></li>
-      <li><a href="../about-page/about-page.html">About</a></li>
-    </ul>
-  </nav>
-
   <div class="content">
     <header>
-      <h1>FM Scouting Tool</h1>
+      <img src="../assets/Logo_title.png">
     </header>
 
     <!-- Hidden div unless saveFilePicker isn't supported -->
@@ -32,28 +25,148 @@
     <!-- TODO: Add ability to select the positions and roles desired -->
     <!-- Check how ranges might work -->
     <main>
-      <h3>How to use</h3>
-      <p> 
-        To use the tool, export a html file from FM using the views linked which are views which will show all the 
-        attributes for the players. These views for your squad, player search and shortlist. </br></br>
 
-        You must have full knowledge of the attributes as ranges won't work. So either scout the player to this point or turn attribute masking off</br></br>
+      <div class="descriptionDiv">
+        <H4>What's this tool for?</H4>
 
-        Once you have exported a html file you can upload it here. It will ask you to save the output, save this as a html file. </br> </br>
+        <p>Description of tool</p>
+      </div>
 
-        It will give you a file that is in a table format of all the players and allow you to sort each column easily </br></br>
+      <h4>How to use:</h4>
+      <div class="instructions">
+        <div class="steps">
+          <div class="step1">
+            <div class="number">
+              1.
+            </div>
 
-        There is currently an upper limit of 250 players
-      </p>
+            <div class="boldStep">
+              <p>
+                Apply the appropriate view to the selected screen on FM
+              </p>
+            </div>
 
-      <a href="../assets/views.zip" download="views">
+            <div class="exampleStep">
+              <p>
+                Squad view applied to squad screen etc...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="number">
+              2.
+            </div>
+
+            <div class="boldStep">
+              <p>
+                The views will display all player attributes
+              </p>
+            </div>
+
+            <div class="exampleStep">
+              <p>
+                Must have full scouting of player or have attribute masking off
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="number">
+              3.
+            </div>
+
+            <div class="boldStep">
+              <p>
+                Export the screen as a html document
+              </p>
+            </div>
+
+            <div class="exampleStep">
+              <p>
+                1. Select the players to output or leave blank to grab all
+                2. Ctrl + p
+                3. Export as Web Page
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="number">
+              4.
+            </div>
+
+            <div class="boldStep">
+              <p>
+                Upload HTML file here
+              </p>
+            </div>
+
+            <div class="exampleStep">
+              <label class="customUpload">
+                <input type="file" id="fileInput" accept="html"/>
+                Upload FM File
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="number">
+              5.
+            </div>
+
+            <div class="boldStep">
+              <p>
+                Save the file as a html file
+              </p>
+            </div>
+
+            <div class="exampleStep">
+              <p>
+                Open file with any web page to view. You can also sort columns for quick check of best in postion
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+      <!-- <a href="../assets/views.zip" download="views">
         <button class="customUpload"> Download Views </button>
-      </a>
+      </a> -->
+      <h4>Please download the views here:</h4>
+      <div class="viewDownloads">
+        <div class="view">
+          <img src="../assets/View Icon.png">
+          <h2>Squad List View</h2>
+        </div>
 
-      <label class="customUpload">
-        <input type="file" id="fileInput" accept="html"/>
-        Upload FM File
-      </label>
+        <div class="view">
+          <img src="../assets/View Icon.png">
+          <h2>Search Players View</h2>
+        </div>
+
+        <div class="view">
+          <img src="../assets/View Icon.png">
+          <h2>Shortlist View</h2>
+        </div>
+
+        <div class="download all">
+          <button class="downloadAll">
+            <h3>Download all</h3>
+          </button>
+        </div>
+      </div>
 
       <div class="alert" id="sizeAlert">
         <p>File size too big please reduce the amount of players</p>

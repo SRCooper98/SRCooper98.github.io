@@ -13,13 +13,8 @@
 
   <div class="content">
     <header>
-      <img src="../assets/Logo_title.png">
+      <img src="../assets/images/Logo_title.png">
     </header>
-
-    <!-- Hidden div unless saveFilePicker isn't supported -->
-    <div class="alert" id="browserAlert"> 
-      <h2>Please don't use Firefox or Safari. You will not be able to save the output otherwise</h2>
-    </div>
 
     <!-- Add loading to wait for pyscript libraries to load fully, potentially hide upload button till done -->
     <!-- TODO: Add ability to select the positions and roles desired -->
@@ -29,10 +24,15 @@
       <div class="descriptionDiv">
         <H4>What's this tool for?</H4>
 
-        <p>Description of tool</p>
+        <p>
+          This tool will help analyse and discover talent when scouting in Football Manager.
+          It takes in all the attributes of the players and rates them 1 to 20 on all roles in the game for you to assess. It can reveal players who can 
+          play in a position not though possible or it allows you to assess the quality of the teams around you to compare
+          and see where the weaknesses are in your own team
+        </p>
       </div>
 
-      <h4>How to use:</h4>
+      <h4>How to use:</h4> <!--Font was roboto or something like that-->
       <div class="instructions">
         <div class="steps">
           <div class="step1">
@@ -82,14 +82,14 @@
 
             <div class="boldStep">
               <p>
-                Export the screen as a html document
+                Export the screen as a html document. Limited to 250 Players
               </p>
             </div>
 
             <div class="exampleStep">
               <p>
-                1. Select the players to output or leave blank to grab all
-                2. Ctrl + p
+                1. Select the players to output or leave blank to grab all <br>
+                2. Ctrl + P <br>
                 3. Export as Web Page
               </p>
             </div>
@@ -108,10 +108,10 @@
               </p>
             </div>
 
-            <div class="exampleStep">
+            <div class="exampleStep uploadStep">
               <label class="customUpload">
                 <input type="file" id="fileInput" accept="html"/>
-                Upload FM File
+                Upload <img src="../assets/images/upload icon.png">
               </label>
             </div>
           </div>
@@ -125,7 +125,7 @@
 
             <div class="boldStep">
               <p>
-                Save the file as a html file
+                Save the file as a html file wherever you want
               </p>
             </div>
 
@@ -136,46 +136,60 @@
             </div>
           </div>
         </div>
-
       </div>
 
-      
-
-      <!-- <a href="../assets/views.zip" download="views">
-        <button class="customUpload"> Download Views </button>
-      </a> -->
       <h4>Please download the views here:</h4>
       <div class="viewDownloads">
-        <div class="view">
-          <img src="../assets/View Icon.png">
-          <h2>Squad List View</h2>
-        </div>
+        <a href="../assets/views/all_attributes_squad.fmf">
+          <div class="view">
+            <img src="../assets/images/View Icon.png">
+            <h2>Squad List View</h2>
+          </div>
+        </a>
 
-        <div class="view">
-          <img src="../assets/View Icon.png">
-          <h2>Search Players View</h2>
-        </div>
+        <a href="../assets/views/all_attributes_player_search.fmf">
+          <div class="view">
+            <img src="../assets/images/View Icon.png">
+            <h2>Search Players View</h2>
+          </div>
+        </a>
 
-        <div class="view">
-          <img src="../assets/View Icon.png">
-          <h2>Shortlist View</h2>
-        </div>
+        <a href="../assets/views/all_attributes_shortlist.fmf">
+          <div class="view">
+            <img src="../assets/images/View Icon.png">
+            <h2>Shortlist View</h2>
+          </div>
+        </a>
 
         <div class="download all">
-          <button class="downloadAll">
-            <h3>Download all</h3>
-          </button>
+          <a href="../assets/views/views.zip" download="views">
+            <button class="downloadAll">
+              <h3>Download all</h3>
+            </button>
+          </a>
         </div>
       </div>
 
-      <div class="alert" id="sizeAlert">
+      <!-- Add alerts down bottom -->
+
+      <!-- <div class="alert" id="sizeAlert">
+        Not needed atm
         <p>File size too big please reduce the amount of players</p>
+      </div> -->
+
+      <!-- Hidden div unless saveFilePicker isn't supported -->
+      <div class="footer">
+        <div class="mentions">
+          <p>Design by Joshua Purves 2023 / Developed by Shaun Cooper</p>
+        </div>
+
+        <div class="alert" id="browserAlert"> 
+          <img src="../assets/images/Warning alert.png">
+          <p>Please don't use Firefox or Safari. <br> You will not be able to save the output otherwise</p>
+        </div>
       </div>
     </main>
   </div>
-
-  <footer>
-  </footer>
 
 <script src="home-page.component.js"></script>
 <script type="py" src="./main.py" config="./pyscript.json"></script>

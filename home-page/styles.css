@@ -1,19 +1,20 @@
 body {
-    background-image: url("../assets/Screenshot\,\ need\ a\ higher\ res\ version\ probs.png"); 
+    background-image: url("../assets/images/Screenshot\,\ need\ a\ higher\ res\ version\ probs.png"); 
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 1440px 970px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow-y: hidden;
+    height: 970px;
 }
 
 .content {
-    background-image: url("../assets/Glass\ Backdrop.png");
+    background-image: url("../assets/images/Glass\ Backdrop.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 1200px 875px;
+    background-size: 1300px 875px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -21,7 +22,7 @@ body {
     row-gap: 50px;
     padding: 25px 0 0 0;
     height: 100%;
-    width: 1200px;
+    width: 1300px;
 }
 
 .content > header {
@@ -47,24 +48,80 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0px 0px 15px 0px;
 }
 
 .steps {
-    background-image: url("../assets/How\ to\ Box.png");
+    background-image: url("../assets/images/How\ to\ Box.png");
     background-repeat: no-repeat;
-    background-size: 200px 160px;
+    background-size: 220px 160px;
     display: grid;
-    grid-template-columns: 190px;
-    grid-template-rows: 0px;
-    height: 130px;
-    width: 200px;
-    padding: 5px 30px 30px 5px;
+    grid-template-rows: [start] 10px [middle] auto [third] 10px [end];
+    height: 160px;
+    width: 220px;
+    padding: 5px 25px 25px 10px;
+    overflow-wrap: normal;
 }
 
+.boldStep > p, .exampleStep > p {
+    margin: 5px 0;
+    text-align: center;
+}
 
+.exampleStep > p {
+    margin-top: 20px;
+}
 
 .number {
     align-self: flex-start;
+}
+
+.boldStep {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: small;
+    flex-direction: column;
+}
+
+.exampleStep {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
+.uploadStep {
+    display: grid;
+    grid-template-rows: [start] 80px [middle] auto [end];
+    grid-row: middle / end;
+    justify-self: center;
+} 
+
+input[type="file"] {
+    display: none;
+}
+
+.customUpload {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgba(240, 40, 3, 0);
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    height: 25px;
+    width: 130px;
+    text-align: center;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+h4 {
+    margin: 0;
 }
 
 .viewDownloads{
@@ -75,11 +132,12 @@ main {
 }
 
 .view {
-    background-image: url("../assets/View\ List\ rectangle.png");
+    background-image: url("../assets/images/View\ List\ rectangle.png");
     background-repeat: no-repeat;
-    background-size: 1070px 70px;
+    background-size: 1155px 70px;
     height: 70px;
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     padding: 0 0 0 40px;
@@ -89,39 +147,33 @@ main {
     padding-left: 20px;
 }
 
-.downloadAll {
+.downloadAll, .downloadAll:hover {
     height: 40px;
     width: 200px;
     color: white;
     background-color: #71a82a;
     border: 0;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .downloadAll > h3 {
     margin: 0;
 }
 
-.alert {
-    background-color: rgba(240, 40, 3, 0.7);
-    border: 2px solid;
-    border-color: red;
-    height: 50px;
-    display: none;
-    /* display: flex; change to flex if needed via JS*/ 
-    justify-content: center;
-    align-items: center;
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-input[type="file"] {
-    display: none;
+.mentions {
+    align-self: flex-end;
+    font-size: small;
 }
 
-.customUpload {
-    border: 1px solid;
-    background-color: #333;
-    color: white;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+#browserAlert {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: end;
 }
